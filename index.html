@@ -16,10 +16,86 @@
         </script>
     </head>
     <body>
-        
+        <div class="myclass">
+            <span>Good Morning</span>
+        </div>
+
+        <form>
+            <input type="text" onkeyup="myfun1(this)">
+            <input type="text" onkeyup="myfun2(this)">
+            <input type="checkbox">
+            <select onchange="myfun4(this)">
+                <option>female</option>
+                <option>male</option>
+                <option>Other</option>
+            </select>
+
+            <textarea onkeyup="myfun3(this)"></textarea>
+        </form>
+
         <script>
 
             // before the closing of body tag
+
+
+            //lets access the DOM element
+            //Document object model
+
+            //object.method
+            //1.document.getelementbyid();
+            //2.document.queryselector();
+
+            // element = tag
+
+            let e1 = document.querySelector('div.myclass');     // L=R   R = L [assosivity of operator]
+            console.log(e1.innerHTML);
+            console.log(e1.innerText);
+            // function defination
+            function myfun1(x){      // x is a formal argument
+                console.log(x.value);
+            }
+
+            //1. function defination
+            function myfun2(y){      // y is a formal argument
+                console.log(y.value)  // element.value
+            }
+
+            //1. function defination
+            function myfun3(z){      // z is a formal argument
+                console.log(z.value)  //element.value
+            }
+            //1. function defination
+            function myfun4(a){      // a is a formal argument
+                console.log(a.value)  //element.value
+            }
+
+            let student1 = {
+              //  1.property:value
+                name:"suraj",
+                surname: 'singh',
+
+
+               // 2.method/function 
+
+               getName(){
+                console.log(this.name)
+
+
+                // object.method()
+                this.getSurname();  // i am calling the function internally
+               },
+               getSurname(){
+                console.log(this.surname)
+                
+               }
+            };   // js object
+
+
+
+                student1.getName();
+               // student1.getSurname();  // i am calling the function externally       
+            //  object.method ()
+
         </script>
     </body>
 </html>
